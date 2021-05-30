@@ -29,7 +29,7 @@ struct HomeView: View {
                         
                         HStack {
                             
-                            Image("swift")
+                            Image(module.content.image)
                                 .resizable()
                                 .frame(width: 116, height: 116)
                                 .clipShape(Circle())
@@ -38,29 +38,35 @@ struct HomeView: View {
                             
                             VStack (alignment: .leading, spacing: 10) {
                                 
-                                Text("Learn Swift")
+                                Text("Learn \(module.category)")
                                     .bold()
                                 
-                                Text("some description")
+                                Text(module.content.description)
                                     .padding(.bottom, 20)
+                                    .font(.caption)
+                                
                                 
                                 HStack {
                                     
                                     Image(systemName: "text.book.closed")
                                         .resizable()
                                         .frame(width: 15, height: 15)
-                                    Text("20 lessons")
+                                    Text("\(module.content.lessons.count)Lessons")
                                         .font(.caption)
+                                    
+                                    Spacer()
+                                    
                                     Image(systemName: "clock")
                                         .resizable()
                                         .frame(width: 15, height: 15)
-                                    Text("2 hours")
+                                    Text(module.content.time)
                                         .font(.caption)
                                     
                                     
                                 }
                                 
                             }
+                            .padding(.leading, 20)
                             
                         }
                         .padding(.horizontal, 20)
