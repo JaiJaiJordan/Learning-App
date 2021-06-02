@@ -15,6 +15,8 @@
 		A204E7E426622E3D00E62CFB /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = A204E7E326622E3D00E62CFB /* style.html */; };
 		A204E7E626622E8500E62CFB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7E526622E8500E62CFB /* Model.swift */; };
 		A204E7E8266245CB00E62CFB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = A204E7E7266245CB00E62CFB /* data.json */; };
+		A204E7EE2663386200E62CFB /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7ED2663386200E62CFB /* HomeViewRow.swift */; };
+		A204E7F02666229000E62CFB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7EF2666229000E62CFB /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A204E7E326622E3D00E62CFB /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		A204E7E526622E8500E62CFB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A204E7E7266245CB00E62CFB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		A204E7ED2663386200E62CFB /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
+		A204E7EF2666229000E62CFB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				A204E7CF26622AB900E62CFB /* HomeView.swift */,
+				A204E7ED2663386200E62CFB /* HomeViewRow.swift */,
+				A204E7EF2666229000E62CFB /* ContentView.swift */,
 			);
 			path = "Views ";
 			sourceTree = "<group>";
@@ -193,6 +199,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A204E7D026622AB900E62CFB /* HomeView.swift in Sources */,
+				A204E7EE2663386200E62CFB /* HomeViewRow.swift in Sources */,
+				A204E7F02666229000E62CFB /* ContentView.swift in Sources */,
 				A204E7CE26622AB900E62CFB /* LearningApp.swift in Sources */,
 				A204E7E226622B5800E62CFB /* ContentModel.swift in Sources */,
 				A204E7E626622E8500E62CFB /* Model.swift in Sources */,
