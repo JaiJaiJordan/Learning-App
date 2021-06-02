@@ -21,7 +21,7 @@ struct HomeView: View {
                 
                 ScrollView {
                     
-                    LazyVStack {
+                    LazyVStack (spacing: 0) {
                         
                         ForEach(model.modules) { module in
                              
@@ -35,20 +35,18 @@ struct HomeView: View {
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
                                 })
                            
-                                
-                            
                             HomeViewRow(image: module.test.image, title: "\(module.category) Test", description: module.test.description, count: "\(module.test.questions.count) Lessons", time: module.test.time)
                             
                         }
                     }
+                    .accentColor(.black)
+                    
                 }
+                
             }
             .navigationTitle("Get Started")
             
         }
-        
-        
-        
     }
 }
 

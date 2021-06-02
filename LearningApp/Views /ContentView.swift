@@ -21,34 +21,24 @@ struct ContentView: View {
                 
                 if model.currentModule != nil {
                     
-                    ForEach(model.currentModule!.content.lessons) { lesson in
+                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
                         
-                        ZStack {
-                            
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 5)
-                                .frame(height: 66)
-                            
-                            HStack {
-                                
-                                Text("1")
-                                
-                                VStack {
-                                    
-                                    Text("Variables and Constants")
-                                        .bold()
-                                    Text("17 minutes")
-                                    
-                                }
-                                
-                            }
-                        }
+                        NavigationLink(
+                            destination: ContentDetailView()
+                                .onAppear(perform: {
+                                    model.beginLesson(lessonIndex: index)
+                                }),
+                            label: {
+                                ContentViewRow(index: index )
+                            })
+                        
                     }
                 }
                 
             }
+            .accentColor(.black)
+            .padding()
+            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
         }
     }
 }
