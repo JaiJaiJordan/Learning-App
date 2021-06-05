@@ -25,7 +25,7 @@ class ContentModel: ObservableObject {
     var currentQuestionIndex = 0
     
     //Current lesson explanation
-    @Published var CodeText = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
     //Current selected content and test
     @Published var currentContentSelected:Int?
@@ -103,7 +103,7 @@ class ContentModel: ObservableObject {
         }
         
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        CodeText = addStyling(htmlString: currentLesson!.explanation)
+        codeText = addStyling(htmlString: currentLesson!.explanation)
     }
     
     func nextLesson() {
@@ -120,6 +120,7 @@ class ContentModel: ObservableObject {
         }
     }
     
+    
     func hasNextLesson() -> Bool {
         
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
@@ -132,11 +133,29 @@ class ContentModel: ObservableObject {
         
         if currentModule?.test.questions.count ?? 0 > 0 {
             currentQuestion = currentModule!.test.questions[currentQuestionIndex]
-            CodeText = addStyling(htmlString: currentQuestion!.content) 
+            codeText = addStyling(htmlString: currentQuestion!.content) 
             
         }
-        
     }
+    
+    func nextQuestion() {
+           
+    //Advance the question index
+    currentQuestionIndex += 1
+        
+    //Check that it's within the range of questions
+        if currentQuestionIndex < currentModule!.test.questions.count {
+            
+            //Set the current question
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeText = addStyling(htmlString: currentQuestion!.content)
+        }
+        else {
+            currentQuestionIndex = 0
+            currentQuestion = nil
+        }
+        }
+    
     //MARK: - Code Styling
     
     private func addStyling( htmlString: String) -> NSAttributedString {
