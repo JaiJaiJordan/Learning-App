@@ -23,6 +23,7 @@
 		A204E7FB266780EC00E62CFB /* Constants .swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7FA266780EC00E62CFB /* Constants .swift */; };
 		A204E7FD2667AE1300E62CFB /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7FC2667AE1300E62CFB /* CodeTextView.swift */; };
 		A204E7FF2668EBA800E62CFB /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E7FE2668EBA800E62CFB /* RectangleCard.swift */; };
+		A204E805266B575C00E62CFB /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A204E804266B575C00E62CFB /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A204E7FA266780EC00E62CFB /* Constants .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants .swift"; sourceTree = "<group>"; };
 		A204E7FC2667AE1300E62CFB /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 		A204E7FE2668EBA800E62CFB /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
+		A204E804266B575C00E62CFB /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				A204E7EF2666229000E62CFB /* ContentView.swift */,
 				A204E7F326676B5B00E62CFB /* ContentViewRow.swift */,
 				A204E7F526677E3100E62CFB /* ContentDetailView.swift */,
+				A204E804266B575C00E62CFB /* TestView.swift */,
 				A204E7FC2667AE1300E62CFB /* CodeTextView.swift */,
 				A204E7FE2668EBA800E62CFB /* RectangleCard.swift */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A204E805266B575C00E62CFB /* TestView.swift in Sources */,
 				A204E7D026622AB900E62CFB /* HomeView.swift in Sources */,
 				A204E7EE2663386200E62CFB /* HomeViewRow.swift in Sources */,
 				A204E7F02666229000E62CFB /* ContentView.swift in Sources */,
