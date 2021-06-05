@@ -26,12 +26,12 @@ class ContentModel: ObservableObject {
     
     //Current lesson explanation
     @Published var codeText = NSAttributedString()
+    var styleData: Data?
     
     //Current selected content and test
-    @Published var currentContentSelected:Int?
-    @Published var currentTestSelected:Int?
+    @Published var currentContentSelected: Int?
+    @Published var currentTestSelected: Int?
     
-    var styleData: Data?
     
     init() {
         
@@ -123,17 +123,24 @@ class ContentModel: ObservableObject {
     
     func hasNextLesson() -> Bool {
         
+        guard currentModule != nil else {
+            return false 
+        }
+        
         return (currentLessonIndex + 1 < currentModule!.content.lessons.count)
         
     }
     
     func beginTest( moduleId:Int) {
         
+        beginModule(moduleid: moduleId)
+        
         currentQuestionIndex = 0
         
         if currentModule?.test.questions.count ?? 0 > 0 {
             currentQuestion = currentModule!.test.questions[currentQuestionIndex]
-            codeText = addStyling(htmlString: currentQuestion!.content) 
+            
+            codeText = addStyling(htmlString: currentQuestion!.content)
             
         }
     }

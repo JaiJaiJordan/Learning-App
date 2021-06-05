@@ -9,14 +9,16 @@ import SwiftUI
 
 struct TestView: View {
     
-    @EnvironmentObject var model:ContentModel
+    @EnvironmentObject var model: ContentModel
     @State var selectedAnswerIndex:Int?
     @State var numCorrect = 0
     @State var submitted = false
+    @State var showResults = false
     
     var body: some View {
         
-        if model.currentQuestion != nil {
+        if model.currentQuestion != nil &&
+            showResults == false {
             
             VStack (alignment: .leading) {
                 
@@ -71,8 +73,7 @@ struct TestView: View {
                                 
                             })
                             .disabled(submitted)
-                            
-                            
+            
                         }
                     }
                     .accentColor(.black)
@@ -84,11 +85,20 @@ struct TestView: View {
                     
                     //Check if answer has been submitted
                     if submitted == true {
-                        //Answer has already been submitted, move to next question
-                        model.nextQuestion()
                         
-                        submitted = false
-                        selectedAnswerIndex = nil 
+                        //Check if its the last question
+                        if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                        
+                        showResults = true
+                            
+                        }
+                        else {
+                            //Answer has already been submitted, move to next question
+                            model.nextQuestion()
+                            
+                            submitted = false
+                            selectedAnswerIndex = nil
+                        }
                     }
                     else {
                         //Submit the answer
@@ -113,18 +123,25 @@ struct TestView: View {
                             .bold()
                             .foregroundColor(.white)
                             
-                    }.padding()
+                    }
+                    .padding()
+                    
                 })
                 .disabled(selectedAnswerIndex == nil )
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
-        else {
-            ProgressView()
+        
+        else if showResults == true {
+            
+            TestResultView(numCorrect: numCorrect)
         }
+            else {
+                ProgressView()
+            }
     }
     
-    var buttonText:String {
+    var buttonText: String {
         
         //Check if answer has been submitte
         if submitted == true {
@@ -138,9 +155,9 @@ struct TestView: View {
         else {
             return "Submit"
         }
-        
-        
+    
     }
+    
 }
 
 struct TestView_Previews: PreviewProvider {

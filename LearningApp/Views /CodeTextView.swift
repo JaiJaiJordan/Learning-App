@@ -11,7 +11,7 @@ struct CodeTextView: UIViewRepresentable {
     
     @EnvironmentObject var model: ContentModel
     
-    func makeUIView(context: Context) -> UITextView {
+    func makeUIView (context: Context) -> UITextView {
         let textView = UITextView()
         textView.isEditable = false
         
@@ -19,7 +19,7 @@ struct CodeTextView: UIViewRepresentable {
         
     }
     
-    func updateUIView(_ textView: UITextView, context: Context) {
+    func updateUIView (_ textView: UITextView, context: Context) {
         
         //Set the attributed text for the lesson
         textView.attributedText = model.codeText
@@ -29,7 +29,6 @@ struct CodeTextView: UIViewRepresentable {
     }
     
     }
-
 
 struct CodeTextView_Previews: PreviewProvider {
     static var previews: some View {
